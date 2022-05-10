@@ -16,4 +16,3 @@ def test_create_log_folder():
     # make a directory if it doesn't exist, checks if the logdir exists
     assert os.path.exists(logdir) == False
     # make a file and directory if they don't exist, checks if the log_file and the logdir exist
-    assert os.path.exists(log_file) == False
