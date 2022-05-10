@@ -12,11 +12,12 @@ from app.db import db
 def application():
     """This makes the app"""
     # you need this one if you want to see whats in the database
-    #os.environ['FLASK_ENV'] = 'development'
+    # os.environ['FLASK_ENV'] = 'development'
     # you need to run it in testing to pass on github
     os.environ['FLASK_ENV'] = 'testing'
+
     application = create_app()
-    application.config['WTF_CSRF_ENABLED'] = False
+
     with application.app_context():
         db.create_all()
         yield application
@@ -25,13 +26,13 @@ def application():
         # db.drop_all()
 
 
-#@pytest.fixture()
-#def add_user(application):
-    #with application.app_context():
-        #new record
-        #user = User('keith@webizly.com', 'testtest')
-        #db.session.add(user)
-        #db.session.commit()
+@pytest.fixture()
+def add_user(application):
+    with application.app_context():
+        # new record
+        user = User('keith@webizly.com', 'testtest')
+        db.session.add(user)
+        db.session.commit()
 
 
 @pytest.fixture()
