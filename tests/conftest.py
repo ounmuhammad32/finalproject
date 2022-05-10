@@ -40,3 +40,7 @@ def client(application):
     return application.test_client()
 
 
+@pytest.fixture()
+def runner(application):
+    """This makes the task runner"""
+    return application.test_cli_runner()
