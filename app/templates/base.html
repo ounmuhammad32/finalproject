@@ -11,7 +11,7 @@
             {{ bootstrap.load_css() }}
         {% endblock %}
 
-        <title>My Site - {% block title %}{% endblock %}</title>
+        <title>Oun's Site - {% block title %}{% endblock %}</title>
         <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
 
     {% endblock %}
@@ -91,7 +91,11 @@
 
 {% endblock %}
 <footer class="text-center mt-5">
-    Environment: {{ deployment_environment }} - Copyright: {{ year }} {{ format_price(100) }}
+    &copy; {{ year }} Oun Muhammad / Environment: {{ deployment_environment }}
+    <p>om9@njit.edu</p>
 </footer>
+
+
+
 </body>
 </html>
