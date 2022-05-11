@@ -1,4 +1,3 @@
-
 """Testing the Calculator"""
 # From specifies the namespace
 from calculator import Calculator
