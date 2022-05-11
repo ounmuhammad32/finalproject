@@ -63,9 +63,3 @@ def create_app():
     return app
 
 
-@login_manager.user_loader
-def user_loader(user_id):
-    try:
-        return User.query.get(int(user_id))
-    except:
-        return None
