@@ -49,7 +49,7 @@ def transactions_upload():
         current_user.transactions = list_of_transactions
         db.session.commit()
 
-        log.info('Transaction CSV Was Uploaded')
+        log.info('A CSV Transaction CSV Was Uploaded')
         return redirect(url_for('transactions.transactions_browse'))
 
     try:
@@ -59,9 +59,12 @@ def transactions_upload():
         abort(404)
 
 @transactions.route('/transactions/current', methods=['GET'])
-@login_required
 def current_balance():
     sql = text('SELECT SUM(amount) AS current_balance FROM transactions')
     result = db.engine.execute(sql)
     balance = [row[0] for row in result]
+    rv = str(balance[0])
+    if rv == 'None':
+        return '0'
+    # else
     return str(balance[0])
