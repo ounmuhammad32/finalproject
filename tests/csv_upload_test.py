@@ -1,6 +1,6 @@
 # This test checks if the transactions csv file exists within the upload folder:
 def test_csv_upload(client):
-    file = "./app/uploads/Updated-Transaction.csv"
+    file = "./app/uploads/transactions.csv"
     data = {'file': (open(file, 'rb'), file)}
 
     # once the login test works I copy that code here for logging in
